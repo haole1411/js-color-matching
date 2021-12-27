@@ -1,5 +1,6 @@
 import { GAME_STATUS, GAME_TIME, PAIRS_COUNT } from './constants.js'
 import {
+  getColorBackground,
   getColorElementList,
   getColorListElement,
   getInActiveColorList,
@@ -77,6 +78,8 @@ function handleColorList(liElement) {
 
   const isMatch = firstColor === secondColor
   if (isMatch) {
+    const backgoundColor = getColorBackground()
+    backgoundColor.style.backgroundColor = firstColor
     //check win
     const isWin = getInActiveColorList().length === 0
     if (isWin) {
